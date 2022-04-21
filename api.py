@@ -51,9 +51,14 @@ middleware = [Middleware(CORSMiddleware,
 app = FastAPI(middleware=middleware)
 
 @app.get("/api/reviews/", response_model=List[Review])
-async def get_reviews():
+async def get_reviews(title: str):
+
+    if title:
+        results = df[df.title == title]
+    else:
+        results = df
     
-    return list(df.to_dict('records'))
+    return list(results.to_dict('records'))
     
 @app.get("/api/reviews/{review_id}", response_model=Review)
 async def get_review(review_id: int):
@@ -61,6 +66,7 @@ async def get_review(review_id: int):
 
 @app.get("/api/reviews/nearest/", response_model=List[Review])
 async def get_nearest_neighbors(review_id: int, nn: int = 10):
+
     review_idxs = index[review_id, :nn]
 
     return list(df.iloc[review_idxs].to_dict('records'))

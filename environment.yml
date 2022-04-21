@@ -9,6 +9,9 @@ dependencies:
   - ipykernel
   - pandas
   - numpy
+  - gunicorn
+  - requests
   - pip:
     - fastapi
     - "uvicorn[standard]"
+    - certifi

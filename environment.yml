@@ -1,0 +1,14 @@
+name: kno
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - ipykernel
+  - pandas
+  - numpy
+  - pip:
+    - fastapi
+    - "uvicorn[standard]"

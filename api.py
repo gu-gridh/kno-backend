@@ -22,6 +22,7 @@ df = df.rename({'gender of author': 'gender_of_author', 'gender of critic': 'gen
 # Get the nearest neighbours index
 index = np.memmap(config["KNN_INDEX_PATH"], dtype='int32', mode='r+', shape=(len(df), len(df)))
 class Review(BaseModel):
+    id: int
     title: Union[str, None]
     author: Union[str, None]
     forum: Union[str, None]

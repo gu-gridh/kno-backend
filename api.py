@@ -1,5 +1,4 @@
-from typing import Optional, List, Union
-from enum import Enum
+from typing import *
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware import Middleware
 from fastapi.middleware.cors import CORSMiddleware
@@ -32,9 +31,16 @@ class Review(BaseModel):
     gender_of_critic: Union[str, None]
     year: Union[int, None]
     same_year: Union[str, None]
-    tokens: Union[List[str], None]
+    tokenized: Union[List[str], None]
+    counts: Union[List[Dict[str, int]], None]
+    counts: Union[List[Dict[str, float]], None]
     x: Union[float, None]
     y: Union[float,None]
+    x_sentence: Union[float, None]
+    y_sentence: Union[float,None]   
+    title_multiple: Union[str, None]
+    author_multiple: Union[str, None]
+    critic_multiple: Union[str, None]
 
     class Config:
         orm_mode = True

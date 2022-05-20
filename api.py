@@ -19,7 +19,7 @@ df = pd.json_normalize(records)
 df = df.rename({'gender of author': 'gender_of_author', 'gender of critic': 'gender_of_critic', 'same year': 'same_year'}, axis=1)
 
 # Get the nearest neighbours index
-index = np.memmap(config["KNN_INDEX_PATH"], dtype='int32', mode='r+', shape=(len(df), len(df)))
+index = np.memmap(config["KNN_INDEX_PATH"], dtype='int64', mode='r+', shape=(len(df), len(df)))
 class Review(BaseModel):
     id: Union[int, None]
     title: Union[str, None]
@@ -74,7 +74,14 @@ async def get_review(review_id: int):
 @app.get("/api/reviews/nearest/", response_model=List[Review])
 async def get_nearest_neighbors(review_id: int, nn: int = 10):
 
+    # index_id = df.iloc[review_id].index_id
+    # review_idxs = index[index_id, :nn]
     review_idxs = index[review_id, :nn]
+    print("---------------------------------")
+    # print(df[df['id'] == review_id])
+    # print(df[df['id'].isin(review_idxs)])
+    print(index)
+    # review_idxs = index[index_id, :nn]
 
     return list(df.iloc[review_idxs].to_dict('records'))
 

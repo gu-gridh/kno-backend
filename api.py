@@ -72,6 +72,7 @@ df, index = initialize_database()
 class Review(BaseModel):
     id: Union[int, None]
     title: Union[str, None]
+    media: Union[str, None]
     author: Union[str, None]
     forum: Union[str, None]
     critic: Union[str, None]
@@ -93,6 +94,7 @@ class Review(BaseModel):
 class MultipleReview(BaseModel):
     id: Union[int, None]
     title: Union[str, None]
+    media: Union[str, None]
     author: Union[str, None]
     forum: Union[str, None]
     critic: Union[str, None]

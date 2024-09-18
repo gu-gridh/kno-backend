@@ -12,23 +12,23 @@ This project provides a FastAPI-based web service to fetch and analyze review da
 
 ## Setup
 
-Install required packages:
+1- Install required packages:
+```bash
+  pip install fastapi pandas requests numpy pydantic
 
-Copy code
-pip install fastapi pandas requests numpy pydantic
-Run the API:
+2- Run the API:
 
-Copy code
-uvicorn main:app --reload
+```bash
+  uvicorn main:app --reload
 
 ## Endpoints
 
-GET /api/reviews/{material}/
-Retrieve reviews for a given material.
-GET /api/reviews/{material}/{review_id}
-Fetch detailed information for a specific review by ID.
-GET /api/reviews/{material}/nearest/?review_id={review_id}&nn={n}
-Retrieve the nearest neighbors for a review based on the precomputed index.
+- GET /api/reviews/{material}/
+- Retrieve reviews for a given material.
+- GET /api/reviews/{material}/{review_id}
+- Fetch detailed information for a specific review by ID.
+- GET /api/reviews/{material}/nearest/?review_id={review_id}&nn={n}
+- Retrieve the nearest neighbors for a review based on the precomputed index.
 
 # Data Initialization
 

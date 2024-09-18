@@ -6,9 +6,9 @@ This project provides a FastAPI-based web service to fetch and analyze review da
 
 ## Features
 
-Fetch all reviews for a specific material
-Retrieve detailed information about a specific review
-Get the nearest neighbor reviews based on precomputed indices
+- Fetch all reviews for a specific material
+- Retrieve detailed information about a specific review
+- Get the nearest neighbor reviews based on precomputed indices
 
 ## Setup
 

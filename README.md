@@ -15,7 +15,7 @@ This project provides a FastAPI-based web service to fetch and analyze review da
 1- Install required packages:
 ```bash
   pip install fastapi pandas requests numpy pydantic
-
+```bash
 2- Run the API:
 
 ```bash

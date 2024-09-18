@@ -17,9 +17,9 @@ This project provides a FastAPI-based web service to fetch and analyze review da
   pip install fastapi pandas requests numpy pydantic
 ```
 2- Run the API:
-
-
+```
   uvicorn main:app --reload
+```
 
 ## Endpoints
 

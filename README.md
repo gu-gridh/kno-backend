@@ -1,5 +1,5 @@
 # kno-backend
-A FastAPI backend for the Order of Criticism project
+A FastAPI backend for the New  Order of Criticism project
 ## Reviews API
 
 This project provides a FastAPI-based web service to fetch and analyze review data from multiple sources.

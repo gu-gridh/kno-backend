@@ -113,13 +113,14 @@ class MultipleReview(BaseModel):
     length: Union[int, None]
 
     class Config:
-        orm_mode = True
+        # orm_mode = True
+        from_attributes = True
 
 
 middleware = [
     Middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=["https://dh.gu.se"],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],

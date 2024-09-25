@@ -7,6 +7,9 @@ import requests
 from pydantic import BaseModel
 import numpy as np
 import json
+from typing import List
+
+
 
 
 def initialize_database():

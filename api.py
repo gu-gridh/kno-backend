@@ -143,7 +143,7 @@ async def get_reviews(material: str, title: Optional[str] = None):
 
 @app.get("/api/reviews/{material}/{review_id}", response_model=Review)
 async def get_review(material: str, review_id: int):
-    print(material, review_id)
+    # print(material, review_id)
 
     return (
         df.loc[material]

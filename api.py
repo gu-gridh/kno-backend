@@ -120,7 +120,7 @@ class MultipleReview(BaseModel):
 middleware = [
     Middleware(
         CORSMiddleware,
-        allow_origins=["https://dh.gu.se"],
+        allow_origins=["https://dh.gu.se", "https://kno.dh.gu.se"],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],

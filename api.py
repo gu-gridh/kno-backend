@@ -35,7 +35,7 @@ def initialize_database():
                 "same year": "same_year",
             },
             axis=1,
-        )
+        ).where(pd.notnull(df), None)
 
         df = df.where(pd.notnull(df), None)
 

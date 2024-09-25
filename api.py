@@ -116,7 +116,7 @@ class MultipleReview(BaseModel):
     length: Union[int, None]
 
     class Config:
-        # orm_mode = True
+        orm_mode = True
         from_attributes = True
 
 
